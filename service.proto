@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+
+message RegistrateRequest {
+  string login = 1;
+  string password = 2;
+  string name = 3;
+  string surname = 4;
+}
+
+message RegistrateResponse {
+  int32 code = 1;
+  string info = 2;
+  string name = 3;
+  string surname = 4;
+}
+
+message LogInRequest {
+  string login = 1;
+  string password = 2;
+}
+
+message LogInResponse{
+  int32 code = 1;
+  string info = 2;
+  string name = 3;
+  string surname = 4;
+}
+
+message Users {
+  string name = 1;
+  string surname = 2;
+}
+
+message ListOfUsers {
+  repeated Users list_of_users = 1;
+  string text = 2;
+}
+
+message Empty {
+
+}
+
+
+message WriteUserResponse {
+  string name = 1;
+  string surname = 2;
+}
+
+message RoomIdLogResponse {
+  string name = 1;
+  string surname = 2;
+  string role = 3;
+}
+
+message RoomIdRequest {
+  string room_id = 1;
+  string name = 2;
+  string surname = 3;
+  string text = 4;
+}
+
+message RoomIdLogRequest {
+  string room_id = 1;
+  string name = 2;
+  string surname = 3;
+  string login = 4;
+  string password = 5;
+}
+
+message NewRoleRequest {
+  string room_id = 1;
+  string name = 2;
+  string surname = 3;
+  string role = 4;
+}
+
+message NewRoleResponse {
+  string role = 1;
+}
+
+service Message {
+  rpc GetListOfUsers (RoomIdRequest) returns (ListOfUsers);
+  rpc Registration(RegistrateRequest) returns (RegistrateResponse);
+  rpc LogIn(LogInRequest) returns (LogInResponse);
+  rpc GetUserWhoWrite(Empty) returns (WriteUserResponse);
+  rpc SetUserWhWrite(WriteUserResponse) returns (Empty);
+  rpc SetRoomId(RoomIdLogRequest) returns (RoomIdLogResponse);
+  rpc UpdateRole(NewRoleRequest) returns (NewRoleResponse);
+}

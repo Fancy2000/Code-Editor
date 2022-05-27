@@ -1,0 +1,90 @@
+.CodeMirror {
+    font-size: 20px;
+    height: 600px;
+    width: 1200px;
+}
+
+.write_b {
+    background-color: #4CAF50;
+}
+
+.room_number, .my_name, .my_surname, .my_log, .my_pass, .my_role{
+  width: 100px;
+  height: 30px;
+  resize: none;
+}
+
+
+.login_btn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-right: 5%;
+}
+
+.register_btn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.container {
+    display: block;
+}
+
+.room_id {
+  display: none;
+}
+
+.login {
+  display: none;
+}
+
+.registration {
+  display: none;
+}
+
+body {
+  background-color:transparent;
+}
+
+.registration-cssave{
+  padding:50px 0;
+}
+
+.registration-cssave form {
+  max-width:800px;
+  padding:50px 70px;
+  border-radius:10px;
+  box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+  background-color:#fff;
+}
+
+.registration-cssave form h3 {
+  font-weight:bold;
+  margin-bottom:30px;
+}
+
+.registration-cssave .item {
+  border-radius:10px;
+  margin-bottom:25px;
+  padding:10px 20px;
+}
+
+.registration-cssave .create-account {
+  border-radius:30px;
+  padding:10px 20px;
+  font-size:18px;
+  font-weight:bold;
+  background-color:#3f93ff;
+  border:none;
+  color:white;
+  margin-top:20px;
+}
+
+@media (max-width: 576px) {
+  .registration-cssave form {
+    padding:50px 20px;
+  }
+}
+
